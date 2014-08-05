@@ -1,6 +1,12 @@
-var x = document.getElementById("getPosition");
+$( document ).ready(function() {
+  $( "#GPS" ).click(function() {
+        getLocation();
+    });
+});
 
-function get_location() {
+function getLocation() {
+   console.log("button clicked");
+
    if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(showPosition,showError);
    } else {
@@ -15,10 +21,6 @@ function showPosition(position) {
    var url = "http://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C" + latlon;
    var image_url="<img src=" + url + ">";
    document.getElementById("map").innerHTML =image_url;
-
-
-
-
 }
 
 function showError(error) {
