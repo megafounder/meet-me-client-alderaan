@@ -1,4 +1,5 @@
-meet-me-client
-==============
+# meet_me client
 
-![](demo.png)
+## First Sprint
+
+![](worklog/demo1.gif)
