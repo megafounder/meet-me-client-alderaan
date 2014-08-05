@@ -11,7 +11,14 @@ function get_location() {
 function showPosition(position) {
    var latlon = position.coords.latitude+","+position.coords.longitude;
    var heading = 0
-   alert (latlon)
+   // alert (latlon)
+   var url = "http://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C" + latlon;
+   var image_url="<img src=" + url + ">";
+   document.getElementById("map").innerHTML =image_url;
+
+
+
+
 }
 
 function showError(error) {
