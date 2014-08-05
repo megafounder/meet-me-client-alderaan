@@ -316,6 +316,14 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+
+        // Deploy to Github Pages https://github.com/tschaub/grunt-gh-pages
+        'gh-pages': {
+            options: {
+                base: 'app'
+            },
+            src: ['**']
         }
     });
 
@@ -373,4 +381,8 @@ module.exports = function (grunt) {
         'test',
         'build'
     ]);
+
+    // Deploy to Github Pages
+    grunt.loadNpmTasks('grunt-gh-pages');
+    grunt.registerTask('deploy', ['gh-pages']);
 };
